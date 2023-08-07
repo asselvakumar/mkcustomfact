@@ -46,3 +46,16 @@ Facter.add(:findfilelinux) do
     end
   end
 end
+
+
+Facter.add(:az_portfolio) do
+  confine :cloud_provider, :azure
+
+  setcode do
+    if Facter.value(:osfamily) == 'windows'
+      'windows'
+    elsif Facter.value(:osfamily) == 'RedHat'
+      'redhat'
+    end
+  end
+end
