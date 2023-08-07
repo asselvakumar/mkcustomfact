@@ -54,9 +54,6 @@ Facter.add(:az_portfolio) do
   end
 
   setcode do
-    cloud_provider = Facter.value(:cloud_provider)
-    Facter.debug("cloud_provider: #{cloud_provider}")
-
     if Facter.value(:osfamily) == 'windows'
       'windows'
     elsif Facter.value(:osfamily) == 'RedHat'
