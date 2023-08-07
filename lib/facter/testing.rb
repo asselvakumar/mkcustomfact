@@ -49,8 +49,8 @@ end
 
 
 Facter.add(:az_portfolio) do
-  confine :cloud_provider do |cloud|
-    cloud['provider'] == 'azure'
+  confine :cloud_provider do |value|
+    value == 'azure'
   end
 
   setcode do
