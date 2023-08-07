@@ -58,22 +58,5 @@ Facter.add(:az_portfolio) do
       'windows'
     elsif Facter.value(:osfamily) == 'RedHat'
       'redhat'
-    else
-      'else'
-    end
-  end
-end
-
-Facter.add(:az_port) do
-  confine :cloud_provider do |cloud|
-    cloud['provider'] == 'azure'
-  end
-
-  setcode do
-    if Facter.value(:osfamily) == 'windows'
-      'windows'
-    elsif Facter.value(:osfamily) == 'RedHat'
-      'redhat'
-    end
   end
 end
