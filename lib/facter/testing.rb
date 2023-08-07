@@ -58,6 +58,8 @@ Facter.add(:az_portfolio) do
       'windows'
     elsif Facter.value(:osfamily) == 'RedHat'
       'redhat'
+    else
+      'else'
     end
   end
 end
