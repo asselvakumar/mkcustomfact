@@ -49,7 +49,9 @@ end
 
 
 Facter.add(:az_portfolio) do
-  confine :cloud_provider, :azure
+  confine :cloud_provider do |cloud|
+    cloud['provider'] == 'azure'
+  end
 
   setcode do
     if Facter.value(:osfamily) == 'windows'
