@@ -49,6 +49,7 @@ end
 
 
 Facter.add(:az_portfolio) do
+  Facter.debug("cloud_provider: #{cloud_provider}")
   confine :cloud_provider do |value|
     value == 'azure'
   end
