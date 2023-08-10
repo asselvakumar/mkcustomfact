@@ -9,10 +9,10 @@ $tags = JSON.parse($tagsList.gsub('=>', ':'))
 
 # Loop through the tags and find the "portfolio" value
 $tags.each |$tag| {
-  if $tag['name'] == 'portfolio' {
+  if $tag['name'] == 'portfolio' 
     $portfolio_value = $tag['value']
     break
-  }
+  end
 }
 
 # Output the captured portfolio value
