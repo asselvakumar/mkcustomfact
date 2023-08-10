@@ -1,6 +1,9 @@
+require 'json'
+
 Facter.add(:portfolio_value) do
     setcode do
-      tagsList = Facter.value('az_metadata.compute.tagsList')
+      tagsList_json = Facter.value('az_metadata.compute.tagsList')
+      tagsList = JSON.parse(tagsList_json)
       portfolio_value = nil
   
       tagsList.each do |tag|
