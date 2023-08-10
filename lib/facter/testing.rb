@@ -70,7 +70,7 @@ Facter.add(:find_portfolio) do
       tags = JSON.parse(tagsList.gsub('=>', ':'))
 
       # Loop through the tags and find the "portfolio" value
-      tags.each do |$tag| 
+      tags.each do |tag| 
         if tag['name'] == 'portfolio' 
           portfolio_value = tag['value']
           break
