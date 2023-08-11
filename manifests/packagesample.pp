@@ -4,8 +4,15 @@
 #
 # @example
 #   include mkcustomfact::packagesample
-#class mkcustomfact::packagesample {
-  #package { 'openssh':
-  #  ensure => '8.7',
-  #}
-#}
+class mkcustomfact::packagesample {
+    $tagsList = $::facts['az_metadata']['compute']['tagsList']
+    $tagsList.each |$tag| {
+      $name = $tag['name']
+      $value = $tag['value']
+      if $name == 'portfolio' {
+        notify { "Tag Name: ${name}, Tag Value: ${value}": }
+      }
+    }
+  }
+
+include packagesample

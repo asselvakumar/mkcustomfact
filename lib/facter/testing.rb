@@ -47,22 +47,7 @@ Facter.add(:findfilelinux) do
   end
 end
 
-
-Facter.add(:az_portfolio) do
-  confine :cloud_provider do |value|
-    value == 'azure'
-  end
-
-  setcode do
-    if Facter.value(:osfamily) == 'windows'
-      'windows'
-    elsif Facter.value(:osfamily) == 'RedHat'
-      'redhat'
-    end
-  end
-end
-
-#Facter.add(:find_portfolio) do
+# Facter.add(:find_portfolio) do
 #  setcode do
 #    portfolio_value = ''
 #      # Convert JSON-like string to a Puppet data structure
@@ -70,15 +55,13 @@ end
 #      tags = JSON.parse(tagsList.gsub('=>', ':'))
 #
 #      # Loop through the tags and find the "portfolio" value
-#      tags.each do |tag| 
-#        if tag['name'] == 'portfolio' 
+#      tags.each do |tag|
+#        if tag['name'] == 'portfolio'
 #          portfolio_value = tag['value']
 #          break
 #        end
 #      end
-#      
+#
 #      portfolio_value
 #  end
-#end
-
-
+# end

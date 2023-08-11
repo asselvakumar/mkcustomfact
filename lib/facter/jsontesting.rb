@@ -1,11 +1,14 @@
-require 'json'
-  
-Facter.add(:portfolio_value) do
-    setcode do
-      #tagsList_json = Facter.value('az_metadata.compute.tagsList')
-      #tagsList_json.each do |key, value|
-            #notice(value)
-        #end
-        'testing'
+
+Facter.add(:az_portfolio) do
+  confine :cloud_provider do |value|
+    value == 'azure'
+  end
+
+  setcode do
+    if Facter.value(:osfamily) == 'windows'
+      'windows'
+    elsif Facter.value(:osfamily) == 'RedHat'
+      'redhat'
     end
+  end
 end
