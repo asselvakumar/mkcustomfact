@@ -11,5 +11,5 @@
 
 require 'facter'
 
-kernel = 'facter -p kernel'
+kernel = Facter.value(:kernel)
 puts "My kernel is #{kernel}"
