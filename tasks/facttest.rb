@@ -9,5 +9,7 @@
 # https://puppet.com/docs/bolt/0.x/writing_tasks.html
 #
 
-kernel = system('facter -p kernel')
+require 'facter'
+
+kernel = 'facter -p kernel'
 puts "My kernel is #{kernel}"
