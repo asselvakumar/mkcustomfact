@@ -18,12 +18,12 @@ Facter.add(:factertestingwindows) do
   end
 end
 
-Facter.add('puppetconfstat') do
-  setcode do
-    ENV['TZ'] = 'America/Adak'
-    Facter::Core::Execution.execute('stat -c %z /etc/puppetlabs/puppet/puppet.conf | cut -d"." -f1')
-  end
-end
+#Facter.add('puppetconfstat') do
+#  setcode do
+#    ENV['TZ'] = 'America/Adak'
+#    Facter::Core::Execution.execute('stat -c %z /etc/puppetlabs/puppet/puppet.conf | cut -d"." -f1')
+#  end
+#end
 
 Facter.add('folder_exists') do
   setcode do
