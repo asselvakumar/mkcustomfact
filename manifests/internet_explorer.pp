@@ -9,11 +9,13 @@ class mkcustomfact::internet_explorer (
   Boolean $esc_enabled_user = false,
 ){
   dsc_ieenhancedsecurityconfiguration { 'esc_enabled_admin' :
-    dsc_enabled => $esc_enabled_admin,
-    dsc_role    => 'Administrators',
+    dsc_enabled     => $esc_enabled_admin,
+    dsc_role        => 'Administrators',
+    validation_mode => 'resource',
   }
   dsc_ieenhancedsecurityconfiguration { 'esc_enabled_user' :
-    dsc_enabled => $esc_enabled_user,
-    dsc_role    => 'Users',
+    dsc_enabled     => $esc_enabled_user,
+    dsc_role        => 'Users',
+    validation_mode => 'resource',
   }
 }
