@@ -1,6 +1,11 @@
 plan mkcustomfact::request (
   TargetSpec $targets
 ) {
+
+  run_task('mkcustomfact::task1', $targets)
+
+  run_task('mkcustomfact::task2', $targets)
+
   $api_key = lookup('mkcustomfact::api_key')
   notify {"Running with api_key ${api_key} ID defined":}
 
