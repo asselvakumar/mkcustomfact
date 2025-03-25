@@ -5,8 +5,8 @@
 # @example
 #   include mkcustomfact::packagesample
 class mkcustomfact::packagesample {
-    $tagsList = $::facts['az_metadata']['compute']['tagsList']
-    $tagsList.each |$tag| {
+    $tagslist = $::facts['az_metadata']['compute']['tagsList']
+    $tagslist.each |$tag| {
       $name = $tag['name']
       $value = $tag['value']
       if $name == 'portfolio' {
