@@ -1,0 +1,11 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Test port input handling",
+  "parameters": {
+    "ports": {
+      "description": "Port to scan",
+      "type": "String[1]"
+    }
+  }
+}
