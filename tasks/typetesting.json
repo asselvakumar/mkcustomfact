@@ -5,7 +5,7 @@
   "parameters": {
     "ports": {
       "description": "Port to scan",
-      "type": "String[1]"
+      "type": "Array[Integer[1,65535], 1]"
     }
   }
 }
